@@ -2,9 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Layout } from './components/layout';
 import HomePage from './components/home-page';
-import AssetsPage from './components/AssetsPage';
-import WalletsPage from './components/WalletsPage';
-import WalletDetailPage from './components/WalletDetailPage';
 import { ThemeProvider } from './providers';
 import { config } from './config';
 import { Toaster } from '@/components/base/sonner';
@@ -20,9 +17,6 @@ const router = (
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="/assets" element={<AssetsPage />} />
-        <Route path="/wallets" element={<WalletsPage />} />
-        <Route path="/wallets/:id" element={<WalletDetailPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
