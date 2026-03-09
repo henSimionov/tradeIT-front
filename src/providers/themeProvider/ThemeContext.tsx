@@ -1,4 +1,4 @@
-import { DayPeriod, getCurrentSlot } from '@/lib/time';
+import { DayPeriod, getCurrentSlot } from '@/time';
 import { createContext, useEffect, useState } from 'react';
 
 
