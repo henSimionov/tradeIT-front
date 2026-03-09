@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant purple (&:where(.purple, .purple *));
+
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-surface: hsl(var(--t-surface));
+  --color-surface-raised: hsl(var(--t-surface-raised));
+  --color-surface-overlay: hsl(var(--t-surface-overlay));
+  --color-subtle: hsl(var(--t-subtle));
+  --color-text-base: hsl(var(--t-text-base));
+  --color-text-muted: hsl(var(--t-text-muted));
+  --color-brand: hsl(var(--t-brand));
+  --color-brand-hover: hsl(var(--t-brand-hover));
+  --color-on-brand: hsl(var(--t-on-brand));
+}
+
+@layer base {
+
+  button {
+    cursor: pointer;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+
+    --t-surface: 0 0% 100%;
+    --t-surface-raised: 0 0% 94%;
+    --t-surface-overlay: 0 0% 93%;
+    --t-subtle: 0 0% 89.8%;
+    --t-text-base: 0 0% 9%;
+    --t-text-muted: 0 0% 45%;
+    --t-brand: 239 84% 67%;
+    --t-brand-hover: 239 84% 60%;
+    --t-on-brand: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
+    --t-surface: 221 39% 11%;
+    --t-surface-raised: 220 26% 14%;
+    --t-surface-overlay: 220 17% 17%;
+    --t-subtle: 217 19% 27%;
+    --t-text-base: 0 0% 98%;
+    --t-text-muted: 215 16% 63%;
+    --t-brand: 239 84% 67%;
+    --t-brand-hover: 239 84% 60%;
+    --t-on-brand: 0 0% 100%;
+  }
+
+  .purple {
+    --background: 270 40% 18%;
+    --foreground: 270 30% 95%;
+    --card: 270 35% 22%;
+    --card-foreground: 270 30% 95%;
+    --popover: 270 35% 22%;
+    --popover-foreground: 270 30% 95%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 28%;
+    --secondary-foreground: 270 20% 90%;
+    --muted: 270 30% 28%;
+    --muted-foreground: 270 20% 68%;
+    --accent: 270 30% 32%;
+    --accent-foreground: 270 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 30% 32%;
+    --input: 270 30% 32%;
+    --ring: 270 80% 70%;
+    --radius: 0.5rem;
+
+    --t-surface: 270 40% 18%;
+    --t-surface-raised: 270 35% 24%;
+    --t-surface-overlay: 270 30% 30%;
+    --t-subtle: 270 28% 35%;
+    --t-text-base: 270 30% 96%;
+    --t-text-muted: 270 20% 68%;
+    --t-brand: 239 84% 67%;
+    --t-brand-hover: 270 80% 62%;
+    --t-on-brand: 0 0% 100%;
+  }
+}
