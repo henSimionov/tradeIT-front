@@ -4,6 +4,7 @@ import { ThemeProvider } from '../providers';
 import { config } from '../config';
 import { AppShell } from '../components/AppShell';
 import { HomePage } from '@/components/homePage';
+import { AuthGuard } from './AuthGuard';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,11 +17,13 @@ export const Router = () => {
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <Routes>
-            <Route element={<AppShell />}>
-              <Route index element={<HomePage />} />
-            </Route>
-          </Routes>
+          <AuthGuard>
+            <Routes>
+              <Route element={<AppShell />}>
+                <Route index element={<HomePage />} />
+              </Route>
+            </Routes>
+          </AuthGuard>
         </BrowserRouter>
       </QueryClientProvider>
     </ThemeProvider>

@@ -1,10 +1,8 @@
-// TODO: replace with real auth/user query when authentication is added
-const MOCK_USER = {
-    name: 'Ariel',
-    email: 'ariel@tradeit.io',
-    initials: 'A',
-};
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export const useUser = () => {
-    return MOCK_USER;
+    const context = useContext(UserContext);
+    if (!context) throw new Error('useUser must be used within a UserProvider');
+    return context;
 };
