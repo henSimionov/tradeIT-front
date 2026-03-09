@@ -3,6 +3,7 @@ const MOCK_USER = {
     name: 'Ariel',
     email: 'ariel@tradeit.io',
     initials: 'A',
+    id: ''
 };
 
 export const useUser = () => {
