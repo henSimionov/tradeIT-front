@@ -18,6 +18,10 @@ const enUS = {
         },
         portfolioOverview: "Here's your portfolio overview.",
         inDevelopment: "In development...",
+        loadingError: "Something went wrong - Please contact our support (Ariel Dadon)",
+    },
+    ui: {
+        loading: "Loading...",
     },
 } as const;
 

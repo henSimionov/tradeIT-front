@@ -14,9 +14,9 @@ export interface Wallet {
     id: string;
     userId: string;
     displayName: string;
-    walletAssets: WalletAsset[];
     createdAt: string;
     updatedAt: string;
+    walletAssets: WalletAsset[];
 }
 
 export interface CreateWalletBody {
