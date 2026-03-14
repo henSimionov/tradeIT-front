@@ -5,16 +5,13 @@ import { Loader } from '@/components/ui/Loader';
 import { useQuery } from '@tanstack/react-query';
 import { User } from '@/api/user/user.types';
 import { getUser } from '@/api/user/user.service';
-import { ONE_SECOND } from '@/time';
 
-export const useAppUserQuery = (clerkId: string | undefined) => {
+
+export const useUserQuery = (clerkId: string | undefined) => {
     return useQuery({
-        queryKey: ['appUser', clerkId],
+        queryKey: ['user', clerkId],
         queryFn: () => getUser(),
         enabled: Boolean(clerkId),
-        retry: 5,
-        retryDelay: (attempt) => Math.min(attempt * ONE_SECOND, ONE_SECOND * 5),
-        staleTime: Infinity,
     });
 };
 
@@ -23,10 +20,10 @@ export const UserContext = createContext<User>(undefined!);
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     const { user: clerkUser } = useClerkUser();
     const { t } = useTranslation('translation', { keyPrefix: 'userProvider' });
-    const { data: appUser, isLoading, isError } = useAppUserQuery(clerkUser?.id);
+    const { data, isLoading, isError } = useUserQuery(clerkUser?.id);
 
     if (isLoading) return <Loader />;
-    if (isError || !appUser) {
+    if (isError || !data) {
         return (
             <div className="flex h-screen items-center justify-center">
                 <p>{t('syncError')}</p>
@@ -35,7 +32,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     return (
-        <UserContext.Provider value={appUser}>
+        <UserContext.Provider value={data}>
             {children}
         </UserContext.Provider>
     );
