@@ -12,5 +12,6 @@ export const config = {
     },
     clerk: {
         publishableKey: z.string().parse(env.VITE_CLERK_PUBLISHABLE_KEY),
+        tokenMethod: 'Bearer',
     },
 };

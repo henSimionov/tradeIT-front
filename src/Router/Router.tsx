@@ -4,7 +4,7 @@ import { ThemeProvider } from '../providers';
 import { config } from '../config';
 import { AppShell } from '../components/AppShell';
 import { HomePage } from '@/components/homePage';
-import { AuthGuard } from './AuthGuard';
+import { AuthGuard } from '../components/auth/AuthGuard';
 
 const queryClient = new QueryClient({
   defaultOptions: {

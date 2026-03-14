@@ -1,6 +1,7 @@
 import { useAuth, RedirectToSignIn } from '@clerk/react';
-import { Loader } from '@/components/ui/Loader';
+
 import { UserProvider } from '@/providers/userProvider/UserContext';
+import { Loader } from '@/components/ui/Loader';
 
 interface AuthGuardProps {
     children: React.ReactNode;
