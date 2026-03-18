@@ -1,19 +1,19 @@
-import type { Wallet } from '@/api/wallet/wallet.types';
+import type { IWallet } from '@/api/wallet/wallet.types';
 
-export interface User {
+export interface IUser {
     id: string;
     firstName: string;
     lastName: string;
     email: string;
     createdAt: string;
     updatedAt: string;
-    wallets: Wallet[];
+    wallets: IWallet[];
 }
 
-export interface CreateUserBody {
+export interface ICreateUserBody {
     firstName: string;
     lastName: string;
     email: string;
 }
 
-export type UpdateUserBody = Partial<CreateUserBody>;
+export type TUpdateUserBody = Partial<ICreateUserBody>;

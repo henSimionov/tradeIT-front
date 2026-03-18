@@ -1,7 +1,9 @@
 import apiClient from '@/api/axios';
-import type { Asset } from '@/api/assets/asset.types';
+import type { IAsset } from '@/api/assets/asset.types';
+
+const ASSETS_ENDPOINT = '/api/assets';
 
 export const getAssets = async () => {
-    const { data } = await apiClient.get<Asset[]>('/assets');
+    const { data } = await apiClient.get<IAsset[]>(ASSETS_ENDPOINT);
     return data;
 };
