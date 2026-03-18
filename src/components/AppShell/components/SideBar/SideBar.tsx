@@ -1,9 +1,10 @@
-import { useUser } from '@/providers/userProvider/useUser';
 import { useTranslation } from 'react-i18next';
 import { PagesNavigator } from './components/PagesNavigator';
+import { UserProfile } from './components/UserProfile';
+
 
 const Sidebar = () => {
-    const user = useUser();
+
     const { t } = useTranslation('translation', { keyPrefix: 'sidebar' });
 
     return (
@@ -16,17 +17,8 @@ const Sidebar = () => {
                     <span className='text-brand'>{t('logoNameHighlight')}</span>
                 </span>
             </div>
-
             <PagesNavigator />
-
-            <div className="px-4 py-4 border-t border-subtle">
-                <div className="flex items-center gap-3">
-                    <div className="overflow-hidden">
-                        <p className="text-sm font-semibold text-text-base truncate">{user.firstName} {user.lastName}</p>
-                        <p className="text-xs text-text-muted truncate">{user.email}</p>
-                    </div>
-                </div>
-            </div>
+            <UserProfile />
         </aside>
     );
 };

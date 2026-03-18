@@ -1,3 +1,4 @@
+
 const enUS = {
     sidebar: {
         logoAlt: "TradeIT logo",
@@ -8,6 +9,37 @@ const enUS = {
             wallets: "Wallets",
             assets: "Assets",
         },
+        userProfile: {
+            logout: "Logout",
+            generateToken: "Generate Token"
+        },
+        tokenDialog: {
+            title: "Generate Token",
+            expirationLabel: "Expiration",
+            selectPlaceholder: "Select expiration...",
+            resultLabel: "Your API Token",
+            options: {
+                "1d": "1 day",
+                "7d": "7 days",
+                "30d": "30 days"
+            },
+            actions: {
+                cancel: "Cancel",
+                generate: "Generate",
+                done: "Done"
+            },
+            errors: {
+                title: "Error",
+                unknown: "An unknown error occurred",
+                noSession: "No active session found. Please try to log in again.",
+                copyFailed: "Failed to copy token."
+            },
+            success: {
+                title: "Success",
+                generated: "Token generated successfully!",
+                copied: "Token copied to clipboard!"
+            }
+        }
     },
     homePage: {
         greeting: {

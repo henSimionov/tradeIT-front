@@ -1,34 +1,34 @@
-import type { Asset } from '@/api/assets/asset.types';
+import type { IAsset } from '@/api/assets/asset.types';
 
-export interface WalletAsset {
+export interface IWalletAsset {
     id: string;
     quantity: number;
     walletId: string;
     assetId: string;
-    asset: Asset;
+    asset: IAsset;
     createdAt: string;
     updatedAt: string;
 }
 
-export interface Wallet {
+export interface IWallet {
     id: string;
     userId: string;
     displayName: string;
-    walletAssets?: WalletAsset[];
+    walletAssets?: IWalletAsset[];
     createdAt: string;
     updatedAt: string;
 }
 
-export interface CreateWalletBody {
+export interface ICreateWalletBody {
     displayName: string;
 }
 
-export type UpdateWalletBody = Partial<CreateWalletBody>;
+export type TUpdateWalletBody = Partial<ICreateWalletBody>;
 
-export interface CreateWalletAssetBody {
+export interface ICreateWalletAssetBody {
     walletId: string;
     assetId: string;
     quantity: number;
 }
 
-export type UpdateWalletAssetBody = Partial<CreateWalletAssetBody>;
+export type TUpdateWalletAssetBody = Partial<ICreateWalletAssetBody>;

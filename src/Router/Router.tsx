@@ -6,6 +6,7 @@ import { AppShell } from '../components/AppShell';
 import { HomePage } from '@/components/homePage';
 import { AuthGuard } from '../components/auth/AuthGuard';
 import { queryClient } from '@/queryClient';
+import { Toaster } from '@/components/ui/toaster';
 
 
 export const Router = () => {
@@ -22,6 +23,7 @@ export const Router = () => {
           </AuthGuard>
         </BrowserRouter>
       </QueryClientProvider>
+      <Toaster />
     </ThemeProvider>
   );
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useUser as useClerkUser } from '@clerk/react';
 import { Loader } from '@/components/ui/Loader';
 import { useQuery } from '@tanstack/react-query';
-import { User } from '@/api/user/user.types';
+import { IUser } from '@/api/user/user.types';
 import { getUser } from '@/api/user/user.service';
 
 
@@ -15,7 +15,7 @@ export const useUserQuery = (clerkId: string | undefined) => {
     });
 };
 
-export const UserContext = createContext<User>(undefined!);
+export const UserContext = createContext<IUser>(undefined!);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     const { user: clerkUser } = useClerkUser();
@@ -32,8 +32,12 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     return (
-        <UserContext.Provider value={data}>
+        <UserContext.Provider value={{ ...data, initials: userInitials(data.firstName, data.lastName) }}>
             {children}
         </UserContext.Provider>
     );
 };
+
+const userInitials = (firstName: string, lastName: string) => {
+    return `${firstName[0]}${lastName[0]}`.toUpperCase();
+}

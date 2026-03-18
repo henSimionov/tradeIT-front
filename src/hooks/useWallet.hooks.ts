@@ -1,11 +1,11 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Wallet } from "@/api/wallet/wallet.types";
+import { IWallet } from "@/api/wallet/wallet.types";
 import { getWallet } from "@/api/wallet/wallet.service";
 
 const FIVE_MINUTES = 1000 * 60 * 5;
 
 export const useWallet = (id: string) => {
-    return useSuspenseQuery<Wallet>({
+    return useSuspenseQuery<IWallet>({
         queryKey: ['wallets', id],
         queryFn: () => getWallet(id),
         staleTime: FIVE_MINUTES,

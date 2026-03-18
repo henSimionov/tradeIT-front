@@ -1,47 +1,50 @@
 import apiClient from '@/api/axios';
 import type {
-    Wallet,
-    WalletAsset,
-    CreateWalletBody,
-    UpdateWalletBody,
-    CreateWalletAssetBody,
-    UpdateWalletAssetBody,
+    IWallet,
+    IWalletAsset,
+    ICreateWalletBody,
+    TUpdateWalletBody,
+    ICreateWalletAssetBody,
+    TUpdateWalletAssetBody,
 } from '@/api/wallet/wallet.types';
 
+const WALLETS_ENDPOINT = '/api/wallets';
+const WALLETS_ASSETS_ENDPOINT = '/api/wallets/assets';
+
 export const getWallets = async () => {
-    const { data } = await apiClient.get<Wallet[]>('/wallets');
+    const { data } = await apiClient.get<IWallet[]>(WALLETS_ENDPOINT);
     return data;
 };
 
 export const getWallet = async (id: string) => {
-    const { data } = await apiClient.get<Wallet>(`/wallets/${id}`);
+    const { data } = await apiClient.get<IWallet>(`${WALLETS_ENDPOINT}/${id}`);
     return data;
 };
 
-export const createWallet = async (body: CreateWalletBody) => {
-    const { data } = await apiClient.post<Wallet>('/wallets', body);
+export const createWallet = async (body: ICreateWalletBody) => {
+    const { data } = await apiClient.post<IWallet>(WALLETS_ENDPOINT, body);
     return data;
 };
 
-export const updateWallet = async (id: string, body: UpdateWalletBody) => {
-    const { data } = await apiClient.put<Wallet>(`/wallets/${id}`, body);
+export const updateWallet = async (id: string, body: TUpdateWalletBody) => {
+    const { data } = await apiClient.put<IWallet>(`${WALLETS_ENDPOINT}/${id}`, body);
     return data;
 };
 
 export const deleteWallet = async (id: string) => {
-    await apiClient.delete(`/wallets/${id}`);
+    await apiClient.delete(`${WALLETS_ENDPOINT}/${id}`);
 };
 
-export const createWalletAsset = async (body: CreateWalletAssetBody) => {
-    const { data } = await apiClient.post<WalletAsset>('/wallets/assets', body);
+export const createWalletAsset = async (body: ICreateWalletAssetBody) => {
+    const { data } = await apiClient.post<IWalletAsset>(WALLETS_ASSETS_ENDPOINT, body);
     return data;
 };
 
-export const updateWalletAsset = async (id: string, body: UpdateWalletAssetBody) => {
-    const { data } = await apiClient.put<WalletAsset>(`/wallets/assets/${id}`, body);
+export const updateWalletAsset = async (id: string, body: TUpdateWalletAssetBody) => {
+    const { data } = await apiClient.put<IWalletAsset>(`${WALLETS_ASSETS_ENDPOINT}/${id}`, body);
     return data;
 };
 
 export const deleteWalletAsset = async (id: string) => {
-    await apiClient.delete(`/wallets/assets/${id}`);
+    await apiClient.delete(`${WALLETS_ASSETS_ENDPOINT}/${id}`);
 };
