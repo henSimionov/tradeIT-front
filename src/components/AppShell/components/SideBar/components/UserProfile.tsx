@@ -37,8 +37,8 @@ export const UserProfile = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
                 <div>
-                    <div className="text-sm font-semibold text-text-base truncate">{user.firstName} {user.lastName}</div>
-                    <div className="text-xs text-text-muted truncate">{user.email}</div>
+                    <div className="text-sm font-semibold text-text-base">{user.firstName} {user.lastName}</div>
+                    <div className="text-xs text-text-muted">{user.email}</div>
                 </div>
             </div>
             <GenerateTokenDialog
