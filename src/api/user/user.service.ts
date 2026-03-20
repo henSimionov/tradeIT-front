@@ -1,7 +1,7 @@
 import apiClient from '@/api/axios';
 import type { IUser, ICreateUserBody, TUpdateUserBody } from '@/api/user/user.types';
 
-const USER_ENDPOINT = '/api/users';
+const USER_ENDPOINT = '/users';
 
 export const getUser = async () => {
     const { data } = await apiClient.get<IUser>(`${USER_ENDPOINT}/me`);
