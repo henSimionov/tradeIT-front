@@ -1,5 +1,5 @@
 export const routes = {
     dashboards: "/",
-    wallets: "/",
-    asserts: "/",
+    wallets: "/wallets",
+    assets: "/",
 } as const;

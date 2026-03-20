@@ -4,6 +4,7 @@ import { ThemeProvider } from '../providers';
 
 import { AppShell } from '../components/AppShell';
 import { HomePage } from '@/components/homePage';
+import { WalletsPage } from '@/components/WalletsPage/WalletsPage';
 import { AuthGuard } from '../components/auth/AuthGuard';
 import { queryClient } from '@/queryClient';
 import { Toaster } from '@/components/ui/toaster';
@@ -18,6 +19,7 @@ export const Router = () => {
             <Routes>
               <Route element={<AppShell />}>
                 <Route index element={<HomePage />} />
+                <Route path="wallets" element={<WalletsPage />} />
               </Route>
             </Routes>
           </AuthGuard>
