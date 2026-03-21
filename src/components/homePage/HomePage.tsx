@@ -24,7 +24,3 @@ export const HomePage = () => {
         </div>
     );
 };
-
-// const userInitials = (user: IUser) => {
-//     return `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
-// }

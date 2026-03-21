@@ -1,4 +1,3 @@
-import type { IWallet } from '@/api/wallet/wallet.types';
 
 export enum UserRoleEnum {
     USER = 'USER',
