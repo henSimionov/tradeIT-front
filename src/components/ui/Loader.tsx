@@ -2,12 +2,14 @@ import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/utils";
 
+type Size = 'sm' | 'md' | 'lg' | 'xl';
+
 interface LoadingProps {
-    size?: 'sm' | 'md' | 'lg' | 'xl';
+    size?: Size;
     className?: string;
 }
 
-const sizeMap = {
+const sizeMap: Record<Size, { icon: string; text: string }> = {
     sm: { icon: 'h-3 w-3', text: 'text-xs' },
     md: { icon: 'h-4 w-4', text: 'text-sm' },
     lg: { icon: 'h-6 w-6', text: 'text-base' },

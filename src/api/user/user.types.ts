@@ -7,14 +7,13 @@ export enum UserRoleEnum {
 
 export interface IUser {
     id: string;
+    euid: string;
     firstName: string;
     lastName: string;
     email: string;
     role: UserRoleEnum;
     createdAt: string;
     updatedAt: string;
-    wallets: IWallet[];
-    initials: string;
 }
 
 export interface ICreateUserBody {
