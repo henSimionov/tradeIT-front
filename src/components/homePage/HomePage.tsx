@@ -18,7 +18,7 @@ export const HomePage = () => {
     return (
         <div className="w-full m-3">
             <div>
-                <span className="scroll-m-20 text-2xl font-extrabold text-balance text-text-base">{greeting}, {user.name} 👋</span>
+                <span className="scroll-m-20 text-2xl font-extrabold text-balance text-text-base">{greeting}, {user.firstName} 👋</span>
                 <p className="text-sm text-text-muted mt-0.5">{t('portfolioOverview')}</p>
             </div>
         </div>

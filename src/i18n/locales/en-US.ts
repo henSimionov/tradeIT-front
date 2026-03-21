@@ -19,6 +19,9 @@ const enUS = {
         portfolioOverview: "Here's your portfolio overview.",
         inDevelopment: "In development...",
     },
+    userProvider: {
+        syncError: "Failed to sync your trading profile. Please refresh the page. If the problem persists, contact our support - Ariel Dadon."
+    }
 } as const;
 
 export default enUS;

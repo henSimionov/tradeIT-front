@@ -25,6 +25,7 @@ export const ThemePicker = () => {
 
     return (
         <Button
+
             onClick={chaangeTheme}
             variant="ghost"
             size="icon"

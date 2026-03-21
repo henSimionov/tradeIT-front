@@ -21,12 +21,9 @@ const Sidebar = () => {
 
             <div className="px-4 py-4 border-t border-subtle">
                 <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center text-on-brand text-sm font-bold">
-                        {user.initials}
-                    </div>
-                    <div className="overflow-hidden">
-                        <p className="text-sm font-semibold text-text-base truncate">{user.name}</p>
-                        <p className="text-xs text-text-muted truncate">{user.email}</p>
+                    <div>
+                        <p className="text-sm font-semibold text-text-base">{user.firstName} {user.lastName}</p>
+                        <p className="text-xs text-text-muted">{user.email}</p>
                     </div>
                 </div>
             </div>
