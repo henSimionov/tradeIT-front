@@ -1,10 +1,6 @@
-import { Suspense } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
 import { useUser } from '@/providers/userProvider/useUser';
 import { DayPeriod, getCurrentSlot } from '@/time';
 import { useTranslation } from 'react-i18next';
-import { Loader } from '../ui/Loader';
-import { PortfolioAssets } from './components/PortfolioAssets';
 
 export const HomePage = () => {
     const user = useUser();
