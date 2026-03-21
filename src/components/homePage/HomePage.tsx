@@ -25,11 +25,6 @@ export const HomePage = () => {
                 <span className="scroll-m-20 text-2xl font-extrabold text-balance text-text-base">{greeting}, {user.firstName} 👋</span>
                 <p className="text-sm text-text-muted mt-0.5">{t('portfolioOverview')}</p>
             </div>
-            <ErrorBoundary fallback={<p className="text-sm">{t('loadingError')}</p>}>
-                <Suspense fallback={<Loader />}>
-                    <PortfolioAssets />
-                </Suspense>
-            </ErrorBoundary>
         </div>
     );
 };

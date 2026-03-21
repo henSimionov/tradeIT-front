@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '../providers';
 
-import { AppShell } from '../components/AppShell';
+import { Layout } from '../components/Layout';
 import { HomePage } from '@/components/homePage';
-import { AuthGuard } from '../components/auth/AuthGuard';
 import { queryClient } from '@/queryClient';
+import { UserProvider } from '@/providers/userProvider/UserContext';
 
 
 export const Router = () => {
@@ -13,18 +13,15 @@ export const Router = () => {
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <AuthGuard>
+          <UserProvider>
             <Routes>
-              <Route element={<AppShell />}>
+              <Route element={<Layout />}>
                 <Route index element={<HomePage />} />
               </Route>
             </Routes>
-          </AuthGuard>
+          </UserProvider>
         </BrowserRouter>
       </QueryClientProvider>
     </ThemeProvider>
   );
-}
-
-
-
+};

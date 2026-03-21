@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import Sidebar from '@/components/AppShell/components/SideBar';
+import Sidebar from '@/components/Layout/components/SideBar';
 import { TopBar } from './components/TopBar';
 
 
-const AppShell = () => {
+export const Layout = () => {
     return (
         <div className="flex h-screen w-full bg-surface">
             <Sidebar />
@@ -16,5 +16,3 @@ const AppShell = () => {
         </div>
     );
 };
-
-export { AppShell };

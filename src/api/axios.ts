@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { config } from '@/config';
 
+const TOKEN_METHOD = 'Bearer';
+
 const apiClient = axios.create({
     baseURL: config.api.baseUrl,
     headers: {
@@ -11,7 +13,7 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(async (axiosConfig) => {
     const token = await window.Clerk?.session?.getToken();
     if (!token) throw new Error('No auth token available');
-    axiosConfig.headers.Authorization = `${config.clerk.tokenMethod} ${token}`;
+    axiosConfig.headers.Authorization = `${TOKEN_METHOD} ${token}`;
     return axiosConfig;
 });
 

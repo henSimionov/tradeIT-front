@@ -24,6 +24,7 @@ export interface ICreateWalletBody {
 }
 
 export type TUpdateWalletBody = Partial<ICreateWalletBody>;
+
 export interface ICreateWalletAssetBody {
     walletId: string;
     assetId: string;

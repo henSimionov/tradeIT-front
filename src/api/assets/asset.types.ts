@@ -1,10 +1,11 @@
-export type AssetType = 'STOCK' | 'CRYPTO' | 'VIRTUAL_COIN';
+
+export type TAssetType = 'STOCK' | 'CRYPTO' | 'VIRTUAL_COIN';
 
 export interface IAsset {
     id: string;
     euid: string;
     displayName: string;
-    type: AssetType;
+    type: TAssetType;
     value: number;
     createdAt: string;
     updatedAt: string;
