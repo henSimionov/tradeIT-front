@@ -1,3 +1,5 @@
+import { act } from "react";
+import { success } from "zod";
 
 const enUS = {
     sidebar: {
@@ -15,19 +17,25 @@ const enUS = {
         },
         tokenDialog: {
             title: "Generate Token",
-            expirationLabel: "Expiration",
-            selectPlaceholder: "Select expiration...",
-            resultLabel: "Your API Token",
-            options: {
-                "1d": "1 day",
-                "7d": "7 days",
-                "30d": "30 days"
+            tokenForm: {
+                expirationLabel: "Expiration",
+                options: {
+                    "1d": "1 day",
+                    "7d": "7 days",
+                    "30d": "30 days"
+                },
+                actions: {
+                    cancel: "Cancel",
+                    generate: "Generate",
+                },
             },
-            actions: {
-                cancel: "Cancel",
-                generate: "Generate",
-                done: "Done"
+            successView: {
+                resultLabel: "Your API Token",
+                actions: {
+                    done: "Done",
+                }
             },
+
             errors: {
                 title: "Error",
                 unknown: "An unknown error occurred",
@@ -38,8 +46,9 @@ const enUS = {
                 title: "Success",
                 generated: "Token generated successfully!",
                 copied: "Token copied to clipboard!"
-            }
-        }
+            },
+
+        },
     },
     homePage: {
         greeting: {

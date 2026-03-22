@@ -37,6 +37,9 @@
   --color-brand: hsl(var(--t-brand));
   --color-brand-hover: hsl(var(--t-brand-hover));
   --color-on-brand: hsl(var(--t-on-brand));
+
+  --color-success: hsl(var(--t-success));
+  --color-success-foreground: hsl(var(--t-success-foreground));
 }
 
 @layer base {
@@ -76,6 +79,9 @@
     --t-brand: 239 84% 67%;
     --t-brand-hover: 239 84% 60%;
     --t-on-brand: 0 0% 100%;
+
+    --t-success: 142 71% 45%;
+    --t-success-foreground: 0 0% 100%;
   }
 
   .dark {
@@ -108,6 +114,9 @@
     --t-brand: 239 84% 67%;
     --t-brand-hover: 239 84% 60%;
     --t-on-brand: 0 0% 100%;
+
+    --t-success: 142 70% 55%;
+    --t-success-foreground: 142 10% 10%;
   }
 
   .purple {
@@ -141,5 +150,8 @@
     --t-brand: 239 84% 67%;
     --t-brand-hover: 270 80% 62%;
     --t-on-brand: 0 0% 100%;
+
+    --t-success: 150 100% 50%;
+    --t-success-foreground: 270 40% 10%;
   }
 }

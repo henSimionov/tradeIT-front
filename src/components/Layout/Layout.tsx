@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom';
 import { TopBar } from './components/TopBar';
-import { Sidebar } from 'lucide-react';
+import Sidebar from './components/SideBar/SideBar';
 
 
 export const Layout = () => {

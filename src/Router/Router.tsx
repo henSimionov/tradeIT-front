@@ -5,7 +5,6 @@ import { ThemeProvider } from '../providers';
 import { Layout } from '../components/Layout';
 import { HomePage } from '@/components/homePage';
 import { queryClient } from '@/queryClient';
-import { Toaster } from '@/components/ui/toaster';
 import { UserProvider } from '@/providers/userProvider/UserContext';
 
 
@@ -23,7 +22,6 @@ export const Router = () => {
           </UserProvider>
         </BrowserRouter>
       </QueryClientProvider>
-      <Toaster />
     </ThemeProvider>
   );
 };
