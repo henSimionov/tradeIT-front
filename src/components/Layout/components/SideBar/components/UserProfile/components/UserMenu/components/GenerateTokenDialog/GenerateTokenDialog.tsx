@@ -41,7 +41,7 @@ export const GenerateTokenDialog = ({ isOpen, onOpenChange }: GenerateTokenDialo
 
                 {
                     isSuccess ? (
-                        <TokenSuccessView token={data.token} />
+                        <TokenSuccessView tokenResponse={data} />
                     ) : (
                         <TokenForm
                             onSubmit={(time) => generateTokenCall(time)}

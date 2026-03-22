@@ -33,7 +33,8 @@ const enUS = {
                 resultLabel: "Your API Token",
                 actions: {
                     done: "Done",
-                }
+                },
+                expiresOn: "Expires on: ",
             },
 
             errors: {
