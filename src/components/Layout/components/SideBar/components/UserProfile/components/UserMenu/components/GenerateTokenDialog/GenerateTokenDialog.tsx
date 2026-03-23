@@ -5,12 +5,21 @@ import { ShieldCheck } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { TokenForm } from "./components/TokenForm";
 import { TokenSuccessView } from "./components/TokenSuccessView";
-import { useGenerateToken } from "./hooks/useGenerateToken";
+import { generateToken } from "@/api/api-keys/api-keys.service";
+import { useMutation } from "@tanstack/react-query";
 
 export interface GenerateTokenDialogProps {
     isOpen: boolean;
     onOpenChange: (open: boolean) => void;
 }
+
+export const useGenerateToken = () => {
+    return useMutation({
+        mutationFn: (expirationTime: string) => {
+            return generateToken(expirationTime);
+        },
+    });
+};
 
 export const GenerateTokenDialog = ({ isOpen, onOpenChange }: GenerateTokenDialogProps) => {
 
