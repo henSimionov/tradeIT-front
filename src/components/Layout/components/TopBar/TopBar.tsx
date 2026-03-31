@@ -7,4 +7,3 @@ export const TopBar = () => {
         </div>
     );
 };
-

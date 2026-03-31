@@ -1,4 +1,6 @@
 
+export const SECOND_IN_MS = 1000;
+
 export enum DayPeriod {
     Morning = 'morning',
     Afternoon = 'afternoon',
